@@ -1,0 +1,13 @@
+//SPDX-License-Identifier: MIT
+
+pragma solidity >=0.7.0 < 0.9.0;
+
+contract SimpleStorage{
+    uint256 public favouritenumber = 5;  //uint is unsigned integer we are initialising it to 5 if dont write 5 then it will take 0
+    function Store(uint256 _favouriteNumber) public {
+        favouritenumber = _favouriteNumber;
+    }   //parameter is uint256, func name is store, Public functions are part of the contract interface and can be either called internally or via messages.
+    function retrieve() public view returns (uint256){
+        return favouritenumber;
+    }
+}
