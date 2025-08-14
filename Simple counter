@@ -16,3 +16,7 @@ contract SimpleCounter  {
         return counter;
     }
 }
+#here if i remove "uint" cha 'u' and just keep "int" then zero chya khali jau shakta
+uint: adhi increment karun jasa vadhta tasa phakta int thevla tar -1 la jau shakta
+but since uint=0 thevla ahe ithe 0 chya khali nahi janar
+phakta increment kela ki vadhel
