@@ -10,7 +10,7 @@ contract SimpleCounter  {
         counter +=1;
     }
     function decrementCounter() public {
-        counter += 1;
+        counter -= 1;
     }
     function getCounter() public view returns (uint) {
         return counter;
