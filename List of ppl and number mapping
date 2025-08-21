@@ -1,0 +1,32 @@
+//SPDX-License-Identifier: MIT
+
+//WE WANT A LIST OF PEOPLE AND THEIR FAVOURITE NUMBER
+
+pragma solidity >=0.7.0 < 0.9.0;
+
+contract SimpleStorage{
+    uint256 public favouritenumber;  //uint is unsigned integer we are initialising it to 5 if dont write 5 then it will take 0
+   
+    struct People{
+        uint256 favouritenumber;
+        string name;
+    }
+    People public person = People({favouritenumber : 7, name : "Saumya"}); //dictionary
+
+    People[] public people;  //dynamic array
+
+    mapping(string => uint256) public nameToFavouriteNumber; //(key => value)
+
+    function addPerson(string memory _name, uint256 _favouritenumber) public{
+        people.push(People({favouritenumber : _favouritenumber, name : _name}));  //adding to the array we use push function
+        nameToFavouriteNumber[_name] = _favouritenumber;
+    }
+
+    function Store(uint256 _favouritenumber) public {
+        favouritenumber = _favouritenumber;
+    }   //parameter is uint256, func name is store, Public functions are part of the contract interface and can be either called internally or via messages.
+   
+    function retrieve() public view returns (uint256){      //pure function is for mathematical transactions
+        return favouritenumber;
+    }
+}
